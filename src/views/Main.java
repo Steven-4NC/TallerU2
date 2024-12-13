@@ -8,10 +8,14 @@ import controller.Llamadas;
 import controller.Serie;
 
 public class Main {
+    //Creamos una isntacia de scanner para leer lo que el usuario ingresa por el teclado
     private static Scanner sc = new Scanner(System.in);
-    public static void main(String[] args) throws Exception {
+    // Metodo principal el cual se encarga de la ejecucion de todo el programa
+    public static void main(String[] args) {
         System.out.println("Taller Nrº2, Steven Narvaez");
         int salida = 0;
+        /*Iniciamos un bucle que presenta las distintas opciones del programa 
+        el cual se ejecuta hasta que el usuario ingrese el valor de 0 para salir del bucle*/ 
         do{
             System.out.println("Escoja una opcion");
             System.out.println("1 Informe de ventas");
@@ -21,7 +25,7 @@ public class Main {
             System.out.println("0 salir del programa");
             salida = sc.nextInt();
             switch (salida) {
-                
+                //Creamos los objetos y se llama a los metodos para ejecutarlos segun las eleccion del usuario
                 case 1:
                     Informe informe = new Informe(); 
                     informe.ejecutar(); 
@@ -38,6 +42,8 @@ public class Main {
                     Serie serie = new Serie();
                     serie.ejecutar(); 
                     break;
+                // Si el usurio ingresa un numero que no esta dentro del rango de 0 a 5 entonces lazara un mensaje de opcion no valida
+                // y si el usuario manda algun numero negativo igual se enviara un mensaje que dira que la opcion no es valida
                 default:
                     if (salida > 5 || salida < 0) {
                         System.out.println("Opccion no valida");                        
